@@ -7,7 +7,7 @@ module.exports = {
     entry: path.join(__dirname, 'src/public/js/entry.js'),
     output: {
         path: path.join(__dirname, 'dist/'),
-        filename: 'public/js/main.js',
+        filename: 'public/js/main.[hash:5].js',
     },
     module: {
         rules: [
@@ -45,7 +45,7 @@ module.exports = {
     },
     plugins: [
         new ExtractTextWebpackPlugin({
-            filename: 'public/css/[name].css',
+            filename: 'public/css/[name].[hash:5].css',
             disable: false,
             allChunks: true,
         }),
@@ -60,8 +60,13 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             title: 'bootstrap',
+            filename: 'views/layout.html',
+            template: './src/views/layout.html',
+        }),
+        new HtmlWebpackPlugin({
             filename: 'views/index.html',
             template: './src/views/index.html',
+            inject: false,
         }),
     ],
     // It's also important so set is in sass-loader and so on

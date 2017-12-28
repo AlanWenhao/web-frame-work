@@ -4,14 +4,15 @@
   "description": "try to set up a web frame with the most popular plugins recently",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "./node_modules/.bin/eslint src/*.es"
+    "eslint": "eslint src/*.js",
+    "watch": "webpack --watch",
+    "prod": "rm -rf ./dist && webpack"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AlanWenhao/web-frame-work.git"
   },
-  "author": "",
+  "author": "Alan Zhang",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AlanWenhao/web-frame-work/issues"
@@ -22,7 +23,9 @@
     "bootstrap-sass": "^3.3.7",
     "express": "^4.16.2",
     "jquery": "^3.2.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "swig": "^1.4.2",
+    "ui.juwai.io": "git+ssh://git@github.com/HouCoder/ui.juwai.io.git#CON-1927"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.3",
@@ -34,6 +37,8 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "extract-text-webpack-plugin": "^3.0.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
     "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.7.2",
     "postcss-color-rgba-fallback": "^3.0.0",

@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Index page</title>
-<link href="../public/css/main.css" rel="stylesheet"></head>
-<body>
-    <div class="btn btn-danger">button</div>
-<script type="text/javascript" src="../public/js/main.js"></script></body>
-</html>
+{% extends 'layout.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block head %}
+{% parent %}
+
+{% endblock %}
+{% block content %}
+    <h2>用户名test</h2>
+    <form>
+        <div class="form-group">
+            <input type="text" id="username" name="username"/>
+            <input type="button" id="button" class="btn btn-danger" value="提交">
+        </div>
+    </form>
+{% endblock %}
