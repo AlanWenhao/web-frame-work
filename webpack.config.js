@@ -3,11 +3,14 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
+const VIEWS_PATH = path.resolve(__dirname, 'src/views');
+
 module.exports = {
     entry: path.join(__dirname, 'src/public/js/entry.js'),
     output: {
-        path: path.join(__dirname, 'dist/'),
-        filename: 'public/js/main.[hash:5].js',
+        path: path.join(__dirname, 'dist/public/'),
+        publicPath: './',
+        filename: 'js/main.js',
     },
     module: {
         rules: [
@@ -45,7 +48,7 @@ module.exports = {
     },
     plugins: [
         new ExtractTextWebpackPlugin({
-            filename: 'public/css/[name].[hash:5].css',
+            filename: 'css/[name].css',
             disable: false,
             allChunks: true,
         }),
@@ -59,13 +62,17 @@ module.exports = {
             Dropdown: 'exports-loader?Dropdown!bootstrap/js/dist/dropdown',
         }),
         new HtmlWebpackPlugin({
-            title: 'bootstrap',
-            filename: 'views/layout.html',
-            template: './src/views/layout.html',
+            filename: '../views/layout.html',
+            template: `${VIEWS_PATH}/layout.html`,
         }),
         new HtmlWebpackPlugin({
-            filename: 'views/index.html',
-            template: './src/views/index.html',
+            filename: '../views/index.html',
+            template: `${VIEWS_PATH}/index.html`,
+            inject: false,
+        }),
+        new HtmlWebpackPlugin({
+            filename: '../views/page.html',
+            template: `${VIEWS_PATH}/page.html`,
             inject: false,
         }),
     ],

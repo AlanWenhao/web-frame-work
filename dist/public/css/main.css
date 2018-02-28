@@ -1,4 +1,14 @@
-div {
-  background: yellow; }
+body {
+  background: lightblue; }
+
+.bg-white {
+  background: white; }
+
+.c-section {
+  margin-top: 20px; }
+
+.c-main {
+  height: 1000px;
+  background: white; }
 
 /*# sourceMappingURL=main.css.map*/

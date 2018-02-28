@@ -1,3 +1,5 @@
-div {
-    background: yellow;
-}
+@import './_common.scss';
+@import './_layout.scss';
+
+// components
+@import './components/_c-main.scss';
